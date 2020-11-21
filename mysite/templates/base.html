@@ -3,12 +3,14 @@
 <html lang="en">
     <head>
         <title>My Django Blog</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link type="text/css" rel="stylesheet" href="{% static 'django_blog.css' %}">
     </head>
     <body>
         <div id="header">
             <ul id="control-bar">
             {% if user.is_authenticated %}
+                <li>Hello {{ user.username }} </li>
              {% if user.is_staff %}<li><a href="{% url 'admin:index' %}">admin</a></li>{% endif %}
               <li><a href="{% url 'logout' %}">logout</a></li>
              {% else %}
@@ -25,3 +27,4 @@
         </div>
     </body>
 </html>
+
