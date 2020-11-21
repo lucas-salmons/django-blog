@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "allauth.socialaccount.providers.github",
-    "rest_framework"
+    "rest_framework",
     "polling",
     "blogging",
 ]
@@ -138,3 +138,8 @@ AUTHENTICATION_BACKENDS = (
 )
 SITE_ID = 1
 ACCOUNT_EMAIL_VERIFICATION = "none"
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
